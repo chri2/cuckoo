@@ -12,7 +12,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <pthread.h>
-#include <x86intrin.h>
+// #include <x86intrin.h>
+#define __rdtsc() 0
 #include <assert.h>
 #include <vector>
 #include <bitset>
