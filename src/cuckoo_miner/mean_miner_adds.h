@@ -56,6 +56,13 @@ extern "C" int cuckoo_init(){
   num_threads_prop.max_value=32;
   add_plugin_property(num_threads_prop);
 
+  PLUGIN_PROPERTY nonce_identity;
+  strcpy(nonce_identity.name,"nonce_identity\0");
+  strcpy(nonce_identity.description,"The first 32 bit of the nonce to use\0");
+  nonce_identity.default_value=0;
+  nonce_identity.min_value=0;
+  nonce_identity.max_value=0xffffffff;
+  add_plugin_property(nonce_identity);
   populate_device_info();
 
   NUM_THREADS_PARAM = num_threads_prop.default_value;
